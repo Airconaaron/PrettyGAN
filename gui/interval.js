@@ -9,7 +9,7 @@ const intervalCheck = () => {
         }
       }
     }
-    mixpanel.track('alive')
+    //mixpanel.track('alive')
   }
 }
 

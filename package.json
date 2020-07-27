@@ -1,7 +1,7 @@
 {
-  "name": "prettyearth",
-  "productName": "PrettyEarth",
-  "version": "1.0.0",
+  "name": "prettgan",
+  "productName": "PrettyGan",
+  "version": "0.0.1",
   "description": "description",
   "main": "start.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "electron .",
     "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=dist --icon=icon.icns --ignore='^/docs|^/dist|^/design' --darwinDarkModeSupport=true"
   },
-  "author": "Evert De Spiegeleer",
+  "author": "Aaron Pang",
   "license": "MIT",
   "dependencies": {
     "auto-launch": "^5.0.5",

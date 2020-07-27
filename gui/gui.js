@@ -6,34 +6,7 @@
 const remote = require('electron').remote.require('./start.js')
 // }
 
-const prettyEarthVersion = '1.0.4'
-
-mixpanel.people.set({
-  version: prettyEarthVersion
-})
-
-if (!localStorage.getItem('device_id')) { // Identify user
-  const uniqueId = `${(new Date()).getTime() + String(Math.floor(Math.random() * 100000000000))}`
-  localStorage.setItem('device_id', uniqueId)
-  mixpanel.people.set({
-    PE_device_id: uniqueId,
-    first_launch_TS: `${(new Date()).getTime()}`,
-    first_launch: `${(Date())}`,
-    os_uname: `${require('os').userInfo().username}`,
-    isDev: false,
-    version: prettyEarthVersion
-  })
-  mixpanel.identify(uniqueId)
-  mixpanel.track('user_init')
-}
-
-mixpanel.identify(localStorage.getItem('device_id'))
-mixpanel.register({
-  PE_device_id: localStorage.getItem('device_id'),
-  os_uname: `${require('os').userInfo().username}`,
-  isDev: false,
-  version: prettyEarthVersion
-})
+const prettyGANVersion = '0.0.1'
 
 const setWallpaper = (cb) => {
   remote.setRandomWallPaper(() => {
@@ -44,7 +17,6 @@ const setWallpaper = (cb) => {
     }
     if (cb) cb()
   })
-  mixpanel.track('wallpaper_set')
 }
 
 const getJSON = function (url, callback) {
@@ -168,5 +140,3 @@ window.checks = () => { // Executes every time the window opens
     }
   })()
 }
-
-mixpanel.track('app_started')

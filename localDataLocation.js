@@ -3,7 +3,7 @@ import mkdirp from 'mkdirp'
 export const localDataLocation = () => {
   const osvar = process.platform
   if (osvar === 'darwin') { // currently only macOS is supported.
-    const apploc = `${require('os').homedir()}/Library/Caches/evertdespiegeleer/PrettyEarth`
+    const apploc = `${require('os').homedir()}/Library/Caches/airconaaron/PrettyGAN`
     mkdirp(apploc, function (err) {
       if (err) console.log(err)
     })

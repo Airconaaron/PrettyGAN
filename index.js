@@ -36,7 +36,7 @@ const updateMapData = () => {
 }
 
 const AutoLauncher = new AutoLaunch({
-  name: 'PrettyEarth',
+  name: 'PrettyGAN',
   path: apploc
 })
 
